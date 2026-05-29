@@ -55,3 +55,26 @@ def remove_task(tarefas):
         print('Essa tarefa não existe')
         input('\nPressione ENTER para continuar...')
         os.system('cls')
+
+
+while True:
+    print('[1] - Adicionar nova tarefa')
+    print('[2] - Listar tarefas')
+    print('[3] - Remover uma tarefa')
+    print('[4] - Sair\n')
+    escolha = int(input('Digite a sua escolha: '))
+
+    match escolha:
+        case 1:
+            os.system('cls')
+            add_task(tarefas)
+        case 2:
+            os.system('cls')
+            list_task(tarefas)
+            input('\nPressione ENTER para continuar...')
+            os.system('cls')
+        case 3:
+            os.system('cls')
+            remove_task(tarefas)
+        case 4:
+            break
