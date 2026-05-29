@@ -26,7 +26,6 @@ def add_task(tarefas):
     save_tasks(tarefas)
     print(f'\nTarefa "{task}" adicionada!')
     input('\nPressione ENTER para continuar...')
-    os.system('cls')
 
 
 def list_task(tarefas):
@@ -43,6 +42,8 @@ def remove_task(tarefas):
     list_task(tarefas)
     if not tarefas:
         return
+    print('\nRemovendo tarefa')
+    print('-' * 20)
     num = int(input('\nDigite o numero da tarefa: '))
     if 1 <= num <= len(tarefas):
         tarefa_removida = tarefas[num-1]
@@ -50,14 +51,13 @@ def remove_task(tarefas):
         save_tasks(tarefas)
         print(f'\nTarefa "{tarefa_removida}" removida!')
         input('\nPressione ENTER para continuar...')
-        os.system('cls')
     else:
-        print('Essa tarefa não existe')
+        print('\nEssa tarefa não existe!')
         input('\nPressione ENTER para continuar...')
-        os.system('cls')
 
 
 while True:
+    os.system('cls')
     print('[1] - Adicionar nova tarefa')
     print('[2] - Listar tarefas')
     print('[3] - Remover uma tarefa')
