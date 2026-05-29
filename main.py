@@ -15,6 +15,9 @@ def save_tasks(tarefas):
         json.dump(tarefas, arquivo, indent=4)
 
 
+tarefas = load_tasks()
+
+
 def add_task(tarefas):
     print('Adicionando tarefa')
     print('-' * 20)
