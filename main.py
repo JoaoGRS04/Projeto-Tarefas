@@ -34,3 +34,21 @@ def list_task(tarefas):
         print('-' * 20)
         for i, t in enumerate(tarefas, start=1):
             print(f'{i} - {t}')
+
+
+def remove_task(tarefas):
+    list_task(tarefas)
+    if not tarefas:
+        return
+    num = int(input('\nDigite o numero da tarefa: '))
+    if 1 <= num <= len(tarefas):
+        tarefa_removida = tarefas[num-1]
+        tarefas.remove(tarefas[num-1])
+        save_tasks(tarefas)
+        print(f'\nTarefa "{tarefa_removida}" removida!')
+        input('\nPressione ENTER para continuar...')
+        os.system('cls')
+    else:
+        print('Essa tarefa não existe')
+        input('\nPressione ENTER para continuar...')
+        os.system('cls')
