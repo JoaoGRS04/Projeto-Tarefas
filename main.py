@@ -24,3 +24,13 @@ def add_task(tarefas):
     print(f'\nTarefa "{task}" adicionada!')
     input('\nPressione ENTER para continuar...')
     os.system('cls')
+
+
+def list_task(tarefas):
+    if not tarefas:
+        print('Sua lista de tarefas está vazia!')
+    else:
+        print('Lista de Tarefas')
+        print('-' * 20)
+        for i, t in enumerate(tarefas, start=1):
+            print(f'{i} - {t}')
